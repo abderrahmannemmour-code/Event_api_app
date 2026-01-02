@@ -1,1 +1,2 @@
-# Event_api_app
+# event-app-api
+Event api app
