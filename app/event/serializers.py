@@ -45,7 +45,6 @@ class EventSerializer(serializers.ModelSerializer):
             "topics_detail",
             "schedules",
             "schedules_detail",
-            "description",
         ]
         read_only_fields = ["id"]
 
@@ -96,10 +95,10 @@ class EventSerializer(serializers.ModelSerializer):
         instance.save()
         return instance
 
-# class EventDetailSerializer(EventSerializer):
-#     """Serializer for event detail view."""
-#     class Meta(EventSerializer.Meta):
-#         fields = EventSerializer.Meta.fields + ['description']
+class EventDetailSerializer(EventSerializer):
+    """Serializer for event detail view."""
+    class Meta(EventSerializer.Meta):
+        fields = EventSerializer.Meta.fields + ['description']
 
 class EventRegistrationSerializer(serializers.ModelSerializer):
     """Serializer for event registration"""
